@@ -1,0 +1,21 @@
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <table class="uk-table">
+    <caption>
+      POIS to Date
+    </caption>
+    <thead>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Contributor</th>
+    </thead>
+    <tbody class="uk-text-left">
+    {{#each pois}}
+      <tr>
+        <td>{{location}}</td>
+        <td>{{description}}</td>
+        <td> {{donor.firstName}} {{donor.lastName}} </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
