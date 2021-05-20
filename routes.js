@@ -15,8 +15,8 @@ module.exports = [
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
-    { method: "GET", path: "/home", config: Donations.home },
-    { method: "POST", path: "/donate", config: Donations.donate },
+    { method: "GET", path: "/home", config: POIs.home },
+   // { method: "POST", path: "/donate", config: Donations.donate },
 
     { method: "GET", path: "/report", config: POIs.report },
     { method: "POST", path: "/addpoi", config: POIs.addPoi },

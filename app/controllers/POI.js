@@ -1,5 +1,5 @@
 "use strict";
-const Donation = require("../models/donation");
+//const Donation = require("../models/donation");
 const POI = require("../models/poi");
 const User = require("../models/user");
 
@@ -11,7 +11,7 @@ const Poi = {
   },
   report: {
     handler: async function(request, h) {
-      const pois = await POI.find().populate("donor").lean();
+      const pois = await POI.find().populate("contributor").lean();
       return h.view("report", {
         title: "POIS to this  Date",
         pois: pois
@@ -27,7 +27,8 @@ const Poi = {
         const newPoi = new POI({
           location: data.Location,
           description: data.Description,
-          donor: user._id
+          catagory: data.Catagory,
+          contributor: user.id
         });
         await newPoi.save();
         return h.redirect("/report");

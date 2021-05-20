@@ -11,9 +11,7 @@ require("./app/models/db");
 
 const env = require("dotenv");
 
-
 const dotenv = require("dotenv");
-
 
 const result = dotenv.config();
 if (result.error) {

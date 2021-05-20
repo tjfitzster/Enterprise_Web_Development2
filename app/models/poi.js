@@ -6,10 +6,11 @@ const Schema = Mongoose.Schema;
 const poiSchema = new Schema({
   location: String,
   description: String,
-  donor: {
+  catagory: String,
+  contributor: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  },
+  }
 });
 
 module.exports = Mongoose.model("POI", poiSchema);

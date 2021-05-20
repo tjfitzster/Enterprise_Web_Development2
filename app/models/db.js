@@ -9,6 +9,7 @@ Mongoose.set("useNewUrlParser", true);
 Mongoose.set("useUnifiedTopology", true);
 
 Mongoose.connect(process.env.db);
+
 const db = Mongoose.connection;
 async function seed() {
   var seeder = require("mais-mongoose-seeder")(Mongoose);
@@ -31,5 +32,5 @@ db.on("disconnected", function() {
 
 db.once("open", function () {
   console.log(`database connected to ${this.name} on ${this.host}`);
-  seed();
+ // seed();
 });
