@@ -2,6 +2,7 @@
 //const Donation = require("../models/donation");
 const POI = require("../models/poi");
 const User = require("../models/user");
+const Joi = require("@hapi/joi");
 
 const Poi = {
   home: {
@@ -24,10 +25,11 @@ const Poi = {
         const id = request.auth.credentials.id;
         const user = await User.findById(id);
         const data = request.payload;
+
         const newPoi = new POI({
           location: data.Location,
           description: data.Description,
-          catagory: data.Catagory,
+          catagory: data.catagory,
           contributor: user.id
         });
         await newPoi.save();

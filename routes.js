@@ -1,9 +1,8 @@
 "use strict";
 
 const Accounts = require("./app/controllers/accounts");
-const Donations = require("./app/controllers/donations");
 const POIs = require("./app/controllers/POI");
-const multer = require("multer");
+
 
 module.exports = [
     { method: "GET", path: "/", config: Accounts.index },
@@ -16,7 +15,6 @@ module.exports = [
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
     { method: "GET", path: "/home", config: POIs.home },
-   // { method: "POST", path: "/donate", config: Donations.donate },
 
     { method: "GET", path: "/report", config: POIs.report },
     { method: "POST", path: "/addpoi", config: POIs.addPoi },
