@@ -1,6 +1,7 @@
 "use strict";
 
 const Accounts = require("./app/controllers/accounts");
+const Gallery = require('./app/controllers/gallery');
 const POIs = require("./app/controllers/POI");
 
 
@@ -13,7 +14,7 @@ module.exports = [
     { method: "POST", path: "/login", config: Accounts.login },
     { method: 'GET', path: '/settings', config: Accounts.showSettings },
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
-
+    { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
     { method: "GET", path: "/home", config: POIs.home },
 
     { method: "GET", path: "/report", config: POIs.report },
