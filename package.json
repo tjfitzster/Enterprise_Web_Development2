@@ -32,6 +32,10 @@
     "@hapi/boom": "^9.1.2",
     "@hapi/cookie": "^11.0.2",
     "@hapi/inert": "^6.0.3",
+    "axios": "^0.21.1",
+    "chai": "^4.3.4",
+    "install": "^0.13.0",
+    "mocha": "^8.3.2",
     "@hapi/joi": "^17.1.1",
     "prettier": "^2.2.1"
   },
