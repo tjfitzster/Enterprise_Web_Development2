@@ -3,15 +3,11 @@
 const POI = require("../models/poi");
 const User = require("../models/user");
 const Joi = require("@hapi/joi");
-const ImageStore = require('../utils/image-store');
 
 const Poi = {
   home: {
-    handler: async function(request, h) {
-      const allImages = await ImageStore.getAllImages();
-      return h.view("home", {
-        title: "Welcome to The POI Application",
-        images: allImages});
+    handler: function(request, h) {
+      return h.view("home", { title: "Welcome to The POI Application" });
     }
   },
   report: {

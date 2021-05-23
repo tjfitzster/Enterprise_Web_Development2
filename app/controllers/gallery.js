@@ -22,9 +22,8 @@ const Gallery = {
       try {
         const file = request.payload.imagefile;
         if (Object.keys(file).length > 0) {
-          console.log("Awating Image Store");
           await ImageStore.uploadImage(request.payload.imagefile);
-          console.log("After image store Image Store");
+
           return h.redirect('/');
         }
         return h.view('gallery', {
