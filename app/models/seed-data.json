@@ -19,5 +19,26 @@
       "email": "bart@simpson.com",
       "password": "secret"
     }
+  },
+  "POIS": {
+    "_model": "POIS",
+    "one": {
+      "location": "New Park Close",
+      "description": "Housing Estate",
+      "catagory": "Political",
+      "contributor": "->users.Homer"
+    },
+    "two": {
+      "location": "WIT The Cork Road",
+      "description": "3rd level College",
+      "catagory": "Educational",
+      "contributor": "->users.Bart"
+    },
+    "three": {
+      "location": "Old Trafford",
+      "description": "Football Stadium",
+      "catagory": "Sport",
+      "contributor": "->users.Marge"
+    }
   }
-}
+},
