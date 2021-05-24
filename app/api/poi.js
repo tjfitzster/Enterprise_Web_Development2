@@ -26,4 +26,4 @@ const Pois= {
     },
   },
 };
-module.exports = Poi;
+module.exports = Pois;

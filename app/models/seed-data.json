@@ -20,25 +20,44 @@
       "password": "secret"
     }
   },
-  "POIS": {
-    "_model": "POIS",
+  "catagories": {
+    "_model": "Catagory",
+    "Sport": {
+      "CatagoryName": "Sport",
+      "Type": "Football"
+    },
+    "Historic": {
+      "CatagoryName": "Historic",
+      "Type": "Irish"
+    },
+    "Political": {
+      "CatagoryName": "Political",
+      "Type": "Irish"
+    },
+    "Educational": {
+      "CatagoryName": "Educational",
+      "Type": "Geography"
+    }
+  },
+  "pois": {
+    "_model": "Poi",
     "one": {
-      "location": "New Park Close",
-      "description": "Housing Estate",
-      "catagory": "Political",
-      "contributor": "->users.Homer"
+      "location": 40,
+      "description": "paypal",
+      "contributor": "->users.bart",
+      "catagory": "->catagories.Sport"
     },
     "two": {
-      "location": "WIT The Cork Road",
-      "description": "3rd level College",
-      "catagory": "Educational",
-      "contributor": "->users.Bart"
+      "location": 40,
+      "description": "paypal",
+      "contributor": "->users.marge",
+      "catagory": "->catagories.Sport"
     },
     "three": {
-      "location": "Old Trafford",
-      "description": "Football Stadium",
-      "catagory": "Sport",
-      "contributor": "->users.Marge"
+      "location": 40,
+      "description": "paypal",
+      "contributor": "->users.marge",
+      "catagory": "->catagories.Historic"
     }
   }
-},
+}

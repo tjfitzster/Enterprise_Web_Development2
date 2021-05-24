@@ -6,11 +6,14 @@ const Schema = Mongoose.Schema;
 const poiSchema = new Schema({
   location: String,
   description: String,
-  catagory: String,
   contributor: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  }
+  },
+  catagory: {
+    type: Schema.Types.ObjectId,
+    ref: "Catagory",
+  },
 });
 
-module.exports = Mongoose.model("POI", poiSchema);
+module.exports = Mongoose.model("Poi", poiSchema);

@@ -14,11 +14,11 @@ const db = Mongoose.connection;
 async function seed() {
   var seeder = require("mais-mongoose-seeder")(Mongoose);
   const data = require("./seed-data.json");
-  const poi = require("./poi.js");
-  const Donation = require("./donation");
+  const Poi = require("./poi.js");
+  const Catagory = require("./catagory");
   const User = require("./user");
   const dbData = await seeder.seed(data, { dropDatabase: false, dropCollections: true });
-  //console.log(dbData);
+ // console.log(dbData);
 }
 
 db.on("error", function(err) {
@@ -31,5 +31,5 @@ db.on("disconnected", function() {
 
 db.once("open", function () {
   console.log(`database connected to ${this.name} on ${this.host}`);
-//  seed();
+ seed();
 });

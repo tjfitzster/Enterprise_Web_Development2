@@ -1,33 +1,34 @@
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-marge">
-    <form class="uk-form-stacked uk-text-left" action="/addpoi" method="POST">
-        <div class="uk-grid uk-grid-stack">
-            <div class="uk-width-1-2@m">
-                <div class="uk-margin">
-                    <label class="uk-form-label" for="form-stacked-text">Enter Location</label>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="text" name="Location" placeholder="Location" />
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <div class="uk-form-label">Enter Description</div>
-                  <input class="uk-input" id="form-stacked-text" type="text" name="Description" placeholder="Description" />
-                </div>
-              <div class="uk-margin">
-                <div class="uk-form-label">Enter Catagory</div>
-                <div class="uk-form-controls">
-                  <label><input class="uk-radio" type="radio" name="catagory" value="Sport"> Sport </label><br>
-                  <label><input class="uk-radio" type="radio" name="catagory" value="Historic"> Historic </label> <br>
-                  <label><input class="uk-radio" type="radio" name="catagory" value="Educational"> Educational </label> <br>
-                  <label><input class="uk-radio" type="radio" name="catagory" value="Political"> Political </label> <br>
-                </div>
-              </div>
-            </div>
-              <div class="uk-margin">
-                <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add POI</button>
-              </div>
-            </div>
+  <form class="uk-form-stacked uk-text-left" action="/addpoi" method="POST">
+    <div class="uk-grid uk-grid-stack">
+      <div class="uk-width-1-2@m">
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-stacked-text">Enter Location</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" id="form-stacked-text" type="text" name="Location" placeholder="Location" />
+          </div>
         </div>
-    </form>
+        <div class="uk-margin">
+          <div class="uk-form-label">Enter Description</div>
+          <input class="uk-input" id="form-stacked-text" type="text" name="Description" placeholder="Description" />
+        </div>
+        <div class="uk-margin">
+          <div class="uk-form-label">Select A Catagory</div>
+          <div class="uk-form-controls">
+            {{#each catagories }}
+              <label> <input class="uk-radio" type="radio" name="catagory" value="{{CatagoryName}},{{Type}}">
+                {{CatagoryName}}:  {{Type}}</label> <br>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div class="uk-margin">
+        <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Add POI</button>
+      </div>
+    </div>
+</div>
+</form>
+
 <h1 class="uk-heading-primary">Cloudinary Gallery</h1>
 
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-marge">

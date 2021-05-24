@@ -4,7 +4,6 @@ const Accounts = require("./app/controllers/accounts");
 const Gallery = require('./app/controllers/gallery');
 const POIs = require("./app/controllers/POI");
 
-
 module.exports = [
     { method: "GET", path: "/", config: Accounts.index },
     { method: "GET", path: "/signup", config: Accounts.showSignup },
@@ -16,7 +15,6 @@ module.exports = [
     { method: 'POST', path: '/settings', config: Accounts.updateSettings },
     { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
     { method: "GET", path: "/home", config: POIs.home },
-
     { method: "GET", path: "/report", config: POIs.report },
     { method: "POST", path: "/addpoi", config: POIs.addPoi },
 
