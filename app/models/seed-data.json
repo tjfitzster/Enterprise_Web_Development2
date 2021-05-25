@@ -58,6 +58,12 @@
       "description": "paypal",
       "contributor": "->users.marge",
       "catagory": "->catagories.Historic"
+    },
+    "four": {
+      "location": 40,
+      "description": "paypal",
+      "contributor": "->users.homer",
+      "catagory": "->catagories.Educational"
     }
   }
 }

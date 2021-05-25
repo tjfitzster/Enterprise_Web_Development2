@@ -23,15 +23,16 @@ const Poi = {
   addPoi: {
     validate: {
       payload: {
-        amount: Joi.number().required(),
-        method: Joi.string().required(),
-        candidate: Joi.string().required(),
+        Location: Joi.string().required(),
+        Description: Joi.string().required(),
+        catagory: Joi.string().required(),
       },
       options: {
         abortEarly: false,
       },
       failAction: async function (request, h, error) {
         const catagories = await Catagory.find().lean();
+        console.log(catagories);
         return h
           .view("home", {
             title: "Invalid Catagory",
@@ -50,14 +51,15 @@ const Poi = {
 
         const rawCatagory = request.payload.catagory.split(",");
         const catagory = await Catagory.findOne({
-          CatagoryName: rawCatagory[0],
-          type: rawCatagory[1],
+          CatagoryName: rawCatagory[0]
         });
+
+
         const newPoi = new POI({
           location: data.Location,
           description: data.Description,
-
-          contributor: user.id
+          contributor: user.id,
+          catagory: catagory.id
         });
         await newPoi.save();
         return h.redirect("/report");
