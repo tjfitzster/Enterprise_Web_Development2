@@ -3,6 +3,7 @@ const POI = require("../models/poi");
 const User = require("../models/user");
 const Catagory = require("../models/catagory");
 const Joi = require("@hapi/joi");
+const sanitizeHtml = require('sanitize-html');
 
 const Poi = {
   home: {
@@ -48,16 +49,17 @@ const Poi = {
         const id = request.auth.credentials.id;
         const user = await User.findById(id);
         const data = request.payload;
-
         const rawCatagory = request.payload.catagory.split(",");
         const catagory = await Catagory.findOne({
           CatagoryName: rawCatagory[0]
         });
 
+        const cleanlocation = sanitizeHtml(data.Location);
+        const cleandiscription = sanitizeHtml(data.Description);
 
         const newPoi = new POI({
-          location: data.Location,
-          description: data.Description,
+          location: cleanlocation,
+          description: cleandiscription,
           contributor: user.id,
           catagory: catagory.id
         });

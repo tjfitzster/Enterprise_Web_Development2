@@ -2,6 +2,7 @@
 const User = require("../models/user");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
+const sanitizeHtml = require('sanitize-html');
 
 const Accounts = {
   index: {
@@ -46,11 +47,15 @@ const Accounts = {
           const message = "Email address is already registered";
           throw Boom.badData(message);
         }
+        const cleanfirstname = sanitizeHtml(payload.firstName);
+        const cleanlastname = sanitizeHtml(payload.lastName);
+        const cleanemail = sanitizeHtml(payload.email);
+        const cleanpassword = sanitizeHtml(payload.password);
         const newUser = new User({
-          firstName: payload.firstName,
-          lastName: payload.lastName,
-          email: payload.email,
-          password: payload.password,
+          firstName: cleanfirstname,
+          lastName: cleanlastname,
+          email: cleanemail,
+          password: cleanpassword,
         });
         user = await newUser.save();
         request.cookieAuth.set({ id: user.id });
@@ -145,9 +150,12 @@ const Accounts = {
         const userEdit = request.payload;
         const id = request.auth.credentials.id;
         const user = await User.findById(id);
-        user.firstName = userEdit.firstName;
-        user.lastName = userEdit.lastName;
-        user.email = userEdit.email;
+        const cleanfirstname = sanitizeHtml(userEdit.firstName);
+        const cleansecondname = sanitizeHtml(userEdit.lastName);
+        const cleanemail = sanitizeHtml(userEdit.email);
+        user.firstName = cleanfirstname;
+        user.lastName = cleansecondname;
+        user.email = cleanemail;
         user.password = userEdit.password;
         await user.save();
         return h.redirect("/settings");
