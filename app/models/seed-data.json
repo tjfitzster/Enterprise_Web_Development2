@@ -42,26 +42,26 @@
   "pois": {
     "_model": "Poi",
     "one": {
-      "location": 40,
-      "description": "paypal",
+      "location": "22 the Gutss Green",
+      "description": "Football Pitch",
       "contributor": "->users.bart",
       "catagory": "->catagories.Sport"
     },
     "two": {
-      "location": 40,
-      "description": "paypal",
+      "location": "The Terrice COurts",
+      "description": "Football Pitch",
       "contributor": "->users.marge",
       "catagory": "->catagories.Sport"
     },
     "three": {
-      "location": 40,
-      "description": "paypal",
+      "location": "40 Collins Barracks",
+      "description": "Revolution Standing point",
       "contributor": "->users.marge",
       "catagory": "->catagories.Historic"
     },
     "four": {
-      "location": 40,
-      "description": "paypal",
+      "location": "30 the grove",
+      "description": "College outreach campus",
       "contributor": "->users.homer",
       "catagory": "->catagories.Educational"
     }
